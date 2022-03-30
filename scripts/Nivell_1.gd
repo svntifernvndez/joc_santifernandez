@@ -1,6 +1,6 @@
-extends KinematicBody2D
+extends Node2D
 
-var velocitat = 200
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -13,6 +13,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-#	pass
-func _process(delta):
-	pass
+	#_on_Area2D2_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
+
+
+
+func _on_Area2D2_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	get_tree().change_scene("res://escenes/Nivell_2.tscn")
