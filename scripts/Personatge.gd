@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 var velocitat_inicial = 200
 # Declare member variables here. Examples:
@@ -15,14 +15,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func _process(delta):
+func process(delta):
 	direccio = Vector2.ZERO
 	if Input.is_action_pressed("left"):
-		direccio = Vector2.LEFT
+		direccio += Vector2.LEFT
 	if Input.is_action_pressed("right"):
-		direccio = Vector2.RIGHT
+		direccio += Vector2.RIGHT
 	if Input.is_action_pressed("up"):
-		direccio = Vector2.UP
+		direccio += Vector2.UP
 	if Input.is_action_pressed("down"):
-		direccio = Vector2.DOWN
-	move_and_slide(direccio * velocitat_inicial)
+		direccio += Vector2.DOWN
+	position += direccio.normalized() * velocitat_inicial

@@ -1,10 +1,11 @@
-extends Control
+extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var velocitat = 300
+var direccio = Vector2.DOWN
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,10 +13,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#_on_Area2D_mouse_entered()
+func _process(delta):
+	if self.is_on_wall():
+		direccio *= -1
+	move_and_slide(direccio*velocitat)
+	
 
 
-func _on_Area2D_mouse_entered():
-	if Input.is_action_just_pressed("ui_mouse_select"):
-		get_tree().change_scene("res://escenes/Nivell_1.tscn")
+
+func _on_KinematicBody2D_input_event(viewport, event):
+	get_tree().reload_current_scene()

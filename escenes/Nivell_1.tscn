@@ -22,79 +22,83 @@ scale = Vector2( 2, 2 )
 position = Vector2( 60, 328 )
 scale = Vector2( 2, 2 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
+[node name="Personatge" parent="." instance=ExtResource( 2 )]
+position = Vector2( 60, 328 )
+
+[node name="Murs" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="Murs" instance=ExtResource( 5 )]
 position = Vector2( 511, 60 )
 scale = Vector2( 26, 3 )
 
-[node name="StaticBody2D3" parent="." instance=ExtResource( 5 )]
+[node name="StaticBody2D3" parent="Murs" instance=ExtResource( 5 )]
 position = Vector2( -5, 299 )
 scale = Vector2( 1.5, 10 )
 
-[node name="StaticBody2D4" parent="." instance=ExtResource( 5 )]
+[node name="StaticBody2D4" parent="Murs" instance=ExtResource( 5 )]
 position = Vector2( 1007, 292 )
 scale = Vector2( 1.5, 10 )
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 5 )]
+[node name="StaticBody2D2" parent="Murs" instance=ExtResource( 5 )]
 position = Vector2( 515, 543 )
 scale = Vector2( 26, 3 )
 
-[node name="StaticBody2D5" parent="." instance=ExtResource( 5 )]
+[node name="StaticBody2D5" parent="Murs" instance=ExtResource( 5 )]
 position = Vector2( 61, 173 )
 scale = Vector2( 2, 4 )
 
-[node name="StaticBody2D6" parent="." instance=ExtResource( 5 )]
+[node name="StaticBody2D6" parent="Murs" instance=ExtResource( 5 )]
 position = Vector2( 62, 487 )
 scale = Vector2( 2, 4 )
 
-[node name="StaticBody2D7" parent="." instance=ExtResource( 5 )]
+[node name="StaticBody2D7" parent="Murs" instance=ExtResource( 5 )]
 position = Vector2( 939, 77 )
 scale = Vector2( 2, 4 )
 
-[node name="StaticBody2D8" parent="." instance=ExtResource( 5 )]
+[node name="StaticBody2D8" parent="Murs" instance=ExtResource( 5 )]
 position = Vector2( 938, 412 )
 scale = Vector2( 2, 4.4 )
 
-[node name="KinematicBody2D2" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="KinematicBody2D2" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
 position = Vector2( 139, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D3" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 209, 236 )
+[node name="KinematicBody2D3" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 219, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D4" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 279, 236 )
+[node name="KinematicBody2D4" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 299, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D5" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 349, 236 )
+[node name="KinematicBody2D5" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 379, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D6" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 419, 236 )
+[node name="KinematicBody2D6" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 459, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D7" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 489, 236 )
+[node name="KinematicBody2D7" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 539, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D8" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 800, 236 )
+[node name="KinematicBody2D8" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 789, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D9" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 700, 236 )
+[node name="KinematicBody2D9" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 699, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D10" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 559, 236 )
+[node name="KinematicBody2D10" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 619, 236 )
 scale = Vector2( 1.8, 1.8 )
 
-[node name="KinematicBody2D11" parent="." groups=["obstacles"] instance=ExtResource( 6 )]
-position = Vector2( 867, 236 )
+[node name="KinematicBody2D11" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
+position = Vector2( 869, 236 )
 scale = Vector2( 1.8, 1.8 )
-
-[node name="Personatge" parent="." instance=ExtResource( 2 )]
-position = Vector2( 60, 328 )
 
 [connection signal="body_shape_entered" from="Area2D2" to="." method="_on_Area2D2_body_shape_entered"]

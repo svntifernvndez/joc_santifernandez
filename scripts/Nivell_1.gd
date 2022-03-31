@@ -13,8 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-	#_on_Area2D2_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
-
+ 
 
 
 func _on_Area2D2_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
