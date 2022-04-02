@@ -13,11 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
- 
-
-
-
+#	pass
 
 
 func _on_Area2D2_area_entered(area):
-	get_tree().change_scene("res://escenes/Nivell_2.tscn")
+	get_tree().change_scene("res://escenes/escenafinal.tscn")

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -12,12 +12,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
- 
-
-
-
-
-
-func _on_Area2D2_area_entered(area):
-	get_tree().change_scene("res://escenes/Nivell_2.tscn")
+func _process(delta):
+	if Input.is_action_just_pressed("enter"):
+		get_tree().change_scene("res://escenes/menuprincipal.tscn")

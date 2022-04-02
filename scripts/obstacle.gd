@@ -1,10 +1,10 @@
-extends KinematicBody2D
+extends Area2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var velocitat = 300
+var velocitat = 350
 var direccio = Vector2.DOWN
 
 # Called when the node enters the scene tree for the first time.
@@ -14,12 +14,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if self.is_on_wall():
-		direccio *= -1
-	move_and_slide(direccio*velocitat)
+	position += velocitat * direccio * delta
+	if position.y >= 469:
+		position.y = 469
+		direccio = Vector2.UP
+	if position.y <= 135:
+		position.y = 135
+		direccio= Vector2.DOWN
+	
 	
 
 
 
-func _on_KinematicBody2D_input_event(viewport, event):
-	get_tree().reload_current_scene()
+
+

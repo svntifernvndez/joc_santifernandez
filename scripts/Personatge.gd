@@ -1,6 +1,6 @@
 extends Area2D
 
-var velocitat_inicial = 200
+var velocitat_inicial = 250
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func process(delta):
+func _physics_process(delta):
 	direccio = Vector2.ZERO
 	if Input.is_action_pressed("left"):
 		direccio += Vector2.LEFT
@@ -25,4 +25,17 @@ func process(delta):
 		direccio += Vector2.UP
 	if Input.is_action_pressed("down"):
 		direccio += Vector2.DOWN
-	position += direccio.normalized() * velocitat_inicial
+	position += direccio.normalized() * velocitat_inicial * delta
+	
+	
+
+
+
+
+
+
+func _on_Personatge_area_entered(area):
+	if area.is_in_group("obstacles") or area.is_in_group("murs"):
+		get_tree().reload_current_scene()
+	
+		

@@ -12,10 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
 	#_on_Area2D_mouse_entered()
-
-
-func _on_Area2D_mouse_entered():
-	if Input.is_action_just_pressed("ui_mouse_select"):
+	if Input.is_action_just_pressed("enter"):
 		get_tree().change_scene("res://escenes/Nivell_1.tscn")
