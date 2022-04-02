@@ -77,14 +77,14 @@ scale = Vector2( 1, 10.6 )
 
 [node name="Area2D" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
 position = Vector2( 925, 310 )
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="Area2D3" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
 position = Vector2( 458, 360 )
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="Area2D2" parent="Obstacles" groups=["obstacles"] instance=ExtResource( 6 )]
 position = Vector2( 925, 410 )
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2( 0.6, 0.6 )
 
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]

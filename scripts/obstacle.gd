@@ -15,8 +15,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += velocitat * direccio * delta
-	if position.y >= 469:
-		position.y = 469
+	if position.y >= 467:
+		position.y = 467
 		direccio = Vector2.UP
 	if position.y <= 135:
 		position.y = 135
